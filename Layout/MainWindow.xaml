@@ -5,8 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Layout"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+        Title="MainWindow" Height="450" Width="450">
+    <Window.Resources>
+        <Style x:Key="Style">
+            <Setter Property="Control.FontSize" Value="25" />
+            <Setter Property="Control.Foreground" Value="Brown" />
+            <Setter Property="Control.Margin" Value="5"/>
+            <Setter Property="Control.Padding" Value="3"/>
+        </Style>
+    </Window.Resources>
+
+    <StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock x:Name="TextBlock_Input" Text="Name" Style="{StaticResource Style}" />
+            <TextBox x:Name="TextBox_Input" Width="362" Style="{StaticResource Style}" />
+        </StackPanel>
+
+        <Button x:Name="Button_Save" Content="Save" Style="{StaticResource Style}" />
+        <Label x:Name="Label_Output" Style="{StaticResource Style}" />
+    </StackPanel>
+
 </Window>
