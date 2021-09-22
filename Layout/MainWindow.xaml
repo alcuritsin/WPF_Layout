@@ -6,104 +6,54 @@
         xmlns:local="clr-namespace:Layout"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="450">
+
     <Window.Resources>
-        <Style x:Key="Style_TextBloc" TargetType="TextBlock">
-            <Setter Property="Control.FontSize" Value="25" />
-            <Setter Property="Control.Foreground" Value="Brown" />
-            <Setter Property="Control.Margin" Value="5" />
-            <Setter Property="Control.Padding" Value="3" />
-            <Setter Property="Background" Value="Gray" />
-            <Setter Property="Opacity" Value="0.5" />
+        <Style TargetType="Button">
+            <Setter Property="FontSize" Value="25" />
+            <Setter Property="Padding" Value="5" />
+            <Setter Property="Foreground" Value="Yellow" />
+            <Setter Property="Background" Value="Black" />
+            <Setter Property="BorderBrush" Value="Yellow" />
         </Style>
-
-        <Style x:Key="Style_Input" TargetType="TextBox">
-            <Setter Property="Control.FontSize" Value="25" />
-            <Setter Property="Control.Foreground" Value="BurlyWood" />
-            <Setter Property="Control.Margin" Value="5" />
-            <Setter Property="Control.Padding" Value="3" />
-            <Setter Property="Background" Value="Gray" />
-        </Style>
-
     </Window.Resources>
 
-    <!-- <StackPanel> -->
-    <!--     <StackPanel Orientation="Horizontal"> -->
-    <!--         <TextBlock x:Name="TextBlock_Input" Text="Name" Style="{StaticResource Style}" /> -->
-    <!--         <TextBox x:Name="TextBox_Input" Width="362" Style="{StaticResource Style}" /> -->
-    <!--     </StackPanel> -->
-    <!-- -->
-    <!--     <Button x:Name="Button_Save" Content="Save" Style="{StaticResource Style}" /> -->
-    <!--     <Label x:Name="Label_Output" Content="Вывод" Style="{StaticResource Style}" /> -->
-    <!-- -->
-    <!--     <DockPanel Height="300" Width="300" LastChildFill="False"> -->
-    <!--         <TextBlock x:Name="TextBlock_3" -->
-    <!--                                Text="Top" DockPanel.Dock="Top" -->
-    <!--                                Style="{StaticResource Style_2}" /> -->
-    <!--         <TextBlock x:Name="TextBlock_2" -->
-    <!--                    Text="Right" DockPanel.Dock="Right" -->
-    <!--                    Style="{StaticResource Style_2}" /> -->
-    <!--         <TextBlock x:Name="TextBlock_1" -->
-    <!--                    Text="Left" DockPanel.Dock="Left" -->
-    <!--                    Style="{StaticResource Style_2}" /> -->
-    <!--         <TextBlock x:Name="TextBlock_4" -->
-    <!--                    Text="Bottom" DockPanel.Dock="Bottom" -->
-    <!--                    Style="{StaticResource Style_2}" /> -->
-    <!--         <TextBlock x:Name="TextBlock_5" -->
-    <!--                    Text="Center" -->
-    <!--                    Style="{StaticResource Style_2}" /> -->
-    <!--         <TextBlock x:Name="TextBlock_6" -->
-    <!--                                Text="Bottom_2" DockPanel.Dock="Bottom" -->
-    <!--                                Style="{StaticResource Style_2}" /> -->
-    <!--     </DockPanel> -->
-    <!-- </StackPanel> -->
-
-    <!-- <DockPanel> -->
-    <!--     <StackPanel DockPanel.Dock="Left"> -->
-    <!--        <TextBlock x:Name="TextBloc_FirstName" Text="First name" Style="{StaticResource Style_TextBloc}"/>  -->
-    <!--        <TextBlock x:Name="TextBloc_LastName" Text="Last name" Style="{StaticResource Style_TextBloc}"/>  -->
-    <!--     </StackPanel> -->
-    <!--     <StackPanel DockPanel.Dock="Right"> -->
-    <!--         <TextBox x:Name="Input_FirstName" Style="{StaticResource Style_Input}"/> -->
-    <!--         <TextBox x:Name="Input_LastName" Style="{StaticResource Style_Input}"/> -->
-    <!--     </StackPanel> -->
-    <!-- </DockPanel> -->
-
-    <Grid ShowGridLines="True">
+    <Grid ShowGridLines="False" Background="Black">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <TextBlock Grid.Row="0" Grid.Column="0" Text="7" Style="{StaticResource Style_TextBloc}" />
-        <TextBlock Grid.Row="1" Grid.Column="0" Grid.RowSpan="2" Text="4" Style="{StaticResource Style_TextBloc}" />
-        <TextBlock Grid.Row="2" Grid.Column="0" Text="1" Style="{StaticResource Style_TextBloc}" />
+        <GridSplitter Grid.Row="0" Grid.Column="1" Grid.RowSpan="3" Width="2" Background="Yellow"
+                      HorizontalAlignment="Center" VerticalAlignment="Stretch" />
+        <GridSplitter Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Height="2" Background="Yellow"
+                      HorizontalAlignment="Stretch" VerticalAlignment="Center" />
 
-        <TextBlock Grid.Row="0" Grid.Column="1" Text="8" Style="{StaticResource Style_TextBloc}" />
-        <TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="5" Style="{StaticResource Style_TextBloc}" />
-        <!-- <TextBlock Grid.Row="2" Grid.Column="1" Text="2" Style="{StaticResource Style_TextBloc}"/> -->
+        <StackPanel Grid.Row="0" Grid.Column="0" Grid.RowSpan="3">
+            <Button Content="B1" />
+            <Button Content="B2" />
+            <Button Content="B3" />
+        </StackPanel>
 
-        <TextBlock Grid.Row="0" Grid.Column="2" Text="9" Style="{StaticResource Style_TextBloc}" />
-        <TextBlock Grid.Row="1" Grid.Column="2" Text="6" Style="{StaticResource Style_TextBloc}" />
-        <!-- <TextBlock Grid.Row="2" Grid.Column="2" Text="3" Style="{StaticResource Style_TextBloc}"/> -->
+        <DockPanel Grid.Column="2" Grid.Row="0" LastChildFill="False">
+            <Button DockPanel.Dock="Left" Content="B" />
+            <Button DockPanel.Dock="Right" Content="B" />
+            <TextBlock Foreground="Yellow" TextWrapping="Wrap">
+                Однажды в студеную зимнюю пору
+                <LineBreak />
+                Я из лесу вышел
+            </TextBlock>
+        </DockPanel>
 
-        <Grid Grid.Row="2" Grid.Column="2" ShowGridLines="True">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-        </Grid>
+
+        <StackPanel Grid.Column="2" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Content="Button" />
+        </StackPanel>
     </Grid>
-
 </Window>
