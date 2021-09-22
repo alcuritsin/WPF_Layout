@@ -12,6 +12,8 @@
             <Setter Property="Control.Foreground" Value="Brown" />
             <Setter Property="Control.Margin" Value="5" />
             <Setter Property="Control.Padding" Value="3" />
+            <Setter Property="Background" Value="Gray" />
+            <Setter Property="Opacity" Value="0.5" />
         </Style>
 
         <Style x:Key="Style_Input" TargetType="TextBox">
@@ -19,7 +21,7 @@
             <Setter Property="Control.Foreground" Value="BurlyWood" />
             <Setter Property="Control.Margin" Value="5" />
             <Setter Property="Control.Padding" Value="3" />
-            <Setter Property="Background" Value="Gray"></Setter>
+            <Setter Property="Background" Value="Gray" />
         </Style>
 
     </Window.Resources>
@@ -54,16 +56,54 @@
     <!--                                Style="{StaticResource Style_2}" /> -->
     <!--     </DockPanel> -->
     <!-- </StackPanel> -->
-    
-    <DockPanel>
-        <StackPanel DockPanel.Dock="Left">
-           <TextBlock x:Name="TextBloc_FirstName" Text="First name" Style="{StaticResource Style_TextBloc}"/> 
-           <TextBlock x:Name="TextBloc_LastName" Text="Last name" Style="{StaticResource Style_TextBloc}"/> 
-        </StackPanel>
-        <StackPanel DockPanel.Dock="Right">
-            <TextBox x:Name="Input_FirstName" Style="{StaticResource Style_Input}"/>
-            <TextBox x:Name="Input_LastName" Style="{StaticResource Style_Input}"/>
-        </StackPanel>
-    </DockPanel>
+
+    <!-- <DockPanel> -->
+    <!--     <StackPanel DockPanel.Dock="Left"> -->
+    <!--        <TextBlock x:Name="TextBloc_FirstName" Text="First name" Style="{StaticResource Style_TextBloc}"/>  -->
+    <!--        <TextBlock x:Name="TextBloc_LastName" Text="Last name" Style="{StaticResource Style_TextBloc}"/>  -->
+    <!--     </StackPanel> -->
+    <!--     <StackPanel DockPanel.Dock="Right"> -->
+    <!--         <TextBox x:Name="Input_FirstName" Style="{StaticResource Style_Input}"/> -->
+    <!--         <TextBox x:Name="Input_LastName" Style="{StaticResource Style_Input}"/> -->
+    <!--     </StackPanel> -->
+    <!-- </DockPanel> -->
+
+    <Grid ShowGridLines="True">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="7" Style="{StaticResource Style_TextBloc}" />
+        <TextBlock Grid.Row="1" Grid.Column="0" Grid.RowSpan="2" Text="4" Style="{StaticResource Style_TextBloc}" />
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="1" Style="{StaticResource Style_TextBloc}" />
+
+        <TextBlock Grid.Row="0" Grid.Column="1" Text="8" Style="{StaticResource Style_TextBloc}" />
+        <TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="5" Style="{StaticResource Style_TextBloc}" />
+        <!-- <TextBlock Grid.Row="2" Grid.Column="1" Text="2" Style="{StaticResource Style_TextBloc}"/> -->
+
+        <TextBlock Grid.Row="0" Grid.Column="2" Text="9" Style="{StaticResource Style_TextBloc}" />
+        <TextBlock Grid.Row="1" Grid.Column="2" Text="6" Style="{StaticResource Style_TextBloc}" />
+        <!-- <TextBlock Grid.Row="2" Grid.Column="2" Text="3" Style="{StaticResource Style_TextBloc}"/> -->
+
+        <Grid Grid.Row="2" Grid.Column="2" ShowGridLines="True">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+        </Grid>
+    </Grid>
 
 </Window>
