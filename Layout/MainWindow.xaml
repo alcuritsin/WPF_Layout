@@ -10,9 +10,18 @@
         <Style x:Key="Style">
             <Setter Property="Control.FontSize" Value="25" />
             <Setter Property="Control.Foreground" Value="Brown" />
-            <Setter Property="Control.Margin" Value="5"/>
-            <Setter Property="Control.Padding" Value="3"/>
+            <Setter Property="Control.Margin" Value="5" />
+            <Setter Property="Control.Padding" Value="3" />
         </Style>
+
+        <Style x:Key="Style_2" TargetType="TextBlock">
+            <Setter Property="Control.FontSize" Value="25" />
+            <Setter Property="Control.Foreground" Value="BurlyWood" />
+            <Setter Property="Control.Margin" Value="5" />
+            <Setter Property="Control.Padding" Value="3" />
+            <Setter Property="Background" Value="Gray"></Setter>
+        </Style>
+
     </Window.Resources>
 
     <StackPanel>
@@ -22,7 +31,28 @@
         </StackPanel>
 
         <Button x:Name="Button_Save" Content="Save" Style="{StaticResource Style}" />
-        <Label x:Name="Label_Output" Style="{StaticResource Style}" />
+        <Label x:Name="Label_Output" Content="Вывод" Style="{StaticResource Style}" />
+
+        <DockPanel Height="300" Width="300" LastChildFill="False">
+            <TextBlock x:Name="TextBlock_3"
+                                   Text="Top" DockPanel.Dock="Top"
+                                   Style="{StaticResource Style_2}" />
+            <TextBlock x:Name="TextBlock_2"
+                       Text="Right" DockPanel.Dock="Right"
+                       Style="{StaticResource Style_2}" />
+            <TextBlock x:Name="TextBlock_1"
+                       Text="Left" DockPanel.Dock="Left"
+                       Style="{StaticResource Style_2}" />
+            <TextBlock x:Name="TextBlock_4"
+                       Text="Bottom" DockPanel.Dock="Bottom"
+                       Style="{StaticResource Style_2}" />
+            <TextBlock x:Name="TextBlock_5"
+                       Text="Center"
+                       Style="{StaticResource Style_2}" />
+            <TextBlock x:Name="TextBlock_6"
+                                   Text="Bottom_2" DockPanel.Dock="Bottom"
+                                   Style="{StaticResource Style_2}" />
+        </DockPanel>
     </StackPanel>
 
 </Window>
